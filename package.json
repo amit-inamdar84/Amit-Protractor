@@ -1,0 +1,23 @@
+{
+  "name": "ProtractorPractice",
+  "dependencies": {
+    "jasmine-data-provider": "^2.2.0",
+    "protractor": "^7.0.0",
+    "protractor-jasmine2-html-reporter": "0.0.7"
+  },
+  "scripts": {
+    "webdriver-update": "webdriver-manager update",
+    "webdriver-start": "webdriver-manager start",
+    "protractor": "protractor configuration.js",
+    "regression": "protractor configuration.js --suite Regression",
+    "Smoke": "protractor configuration.js --suite Smoke",
+    "start": "npm run webdriver-update &&npm run webdriver-start"
+  },
+  "version": "1.0.0",
+  "main": "Actions.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
