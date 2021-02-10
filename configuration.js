@@ -2,7 +2,7 @@
 var Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
 exports.config = {
 		seleniumAddress: 'http://localhost:4444/wd/hub',
-		specs: ['CartItemsValidation.js'],
+		specs: ['Tests/TC002.js'],
 		capabilities: {
 			  'browserName': 'chrome'
 			},
