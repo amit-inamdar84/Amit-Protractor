@@ -20,10 +20,16 @@ describe("Handling web tables", function() {
 
 		// get cell values
 		var cells = rows.all(by.tagName("th"));
-			cells.get(0).getText().then(function(text) {//For testing purpose
-				console.log(text);
-			})
+		cells.count().then(function(count) {//Get cell count and catch value returned by promise
+			console.log("Cell count: "+count);
+			for(var i = 0; i<count;i++){//Loop through from 0 to count and get text of each web element
+				cells.get(i).getText().then(function(text) {//For testing purpose
+					console.log(text);
+				})
+			}
+		})
 
+		//Assert each element at index n using get(index) function applicable on element.all variable.
 		expect(cells.get(0).getText()).toEqual("firstName");
 		expect(cells.get(1).getText()).toEqual("lastName");
 		expect(cells.get(2).getText()).toEqual("age");
@@ -47,5 +53,24 @@ describe("Handling web tables", function() {
 			  {index: 3, text: 'email'},
 			  {index: 4, text: 'balance'}
 			]);
+	})
+	
+	it("Get text of a particular record in web table", function() {
+		var table = element.all(by.css("table[st-table='rowCollection']>thead"));//Locate entire table
+		var rows = table.all(by.xpath("//table[@st-table='rowCollection']/tbody/tr")).each(function(item) {
+			var cells = item.all(by.tagName("td"));
+			cells.count().then(function(count) {//Get cell count and catch value returned by promise
+				for(var i = 0; i<count;i++){//Loop through from 0 to count and get text of each web element
+					cells.get(i).getText().then(function(text) {
+						if(text == "Dupont"){
+						process.stdout.write(text+" ");
+						}
+					})
+					console.log();
+				}
+			})
+			
+		});
+
 	})
 })
