@@ -60,17 +60,33 @@ describe("Handling web tables", function() {
 		var rows = table.all(by.xpath("//table[@st-table='rowCollection']/tbody/tr")).each(function(item) {
 			var cells = item.all(by.tagName("td"));
 			cells.count().then(function(count) {//Get cell count and catch value returned by promise
-				for(var i = 0; i<count;i++){//Loop through from 0 to count and get text of each web element
-					cells.get(i).getText().then(function(text) {
-						if(text == "Dupont"){
-						process.stdout.write(text+" ");
+				for(var i = 0; i<count;i++){//Loop through from 0 to count
+					cells.get(i).getText().then(function(text) {//get text of each web element
+						if(text == "Dupont"){//No unique text found in this web table. So unable to assert properly
+						expect(text).toEqual("Dupont");
 						}
 					})
-					console.log();
+					//console.log();
 				}
 			})
 			
 		});
 
+	})
+	
+	it("Search for a particular text and verify search results", function() {
+	    var EC = protractor.ExpectedConditions;
+		element(by.css("input[placeholder='search for firstname']")).sendKeys("Robert");
+		var table = element.all(by.css("table[st-table='rowCollection']>thead"));//Locate entire table
+		table.all(by.xpath("//table[@st-table='rowCollection']/tbody/tr")).count().then(function(count) {
+			console.log("No of matching records: "+count);
+		})
+		table.all(by.xpath("//table[@st-table='rowCollection']/tbody/tr")).each(function(item) {
+			var stale = EC.not(EC.stalenessOf(item.element(by.css("td:nth-child(1)"))));
+			browser.wait(stale, 20000);
+			item.element(by.css("td:nth-child(1)")).getText().then(function(text) {
+						expect(text).toEqual("Robert");
+					});			
+		});
 	})
 })

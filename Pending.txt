@@ -1,7 +1,9 @@
 -------------------------------------------
-CTRL+Click does not work.
-Sometimes auto suggestions do not work
-Debugging how to???
-Issues dealing with promise - TC001.js line 30 and CartItemsValidation.js line 26
-// Use colors in the command line report.
-Running protractor tests using Jenkins: 
+1. CTRL+Click does not work.
+2. Sometimes auto suggestions do not work
+3. Debugging how to???
+4. Issues dealing with promise - TC001.js line 30 and CartItemsValidation.js line 26
+5. // Use colors in the command line report.
+6. Running protractor tests using Jenkins: 
+7. Unable to fix this Error: Timeout - Async callback was not invoked within timeout specified by jasmine.DEFAULT_TIMEOUT_INTERVAL. - TC003
+8. 
