@@ -4,7 +4,7 @@
  * Verify global name search to display matching records
  * Read and print all records in web table
  * Search for a specific text in web table
- * Verify sorting.
+ * Verify sorting
  */
 describe("Handling web tables", function() {
 	it("Retrieve header row labels and and validate text", function() {
