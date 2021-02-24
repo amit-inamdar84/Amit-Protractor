@@ -1,4 +1,7 @@
+//By default console.log prints in new line every time it is called.
 console.log("First javascript program");
+
+//To print in same line or to print without trailing newline use process.stdout.write
 /**
 Javascript is a dynamic type language, which means you dont need to specify type of the variable because it
 is dynamically used by Jscript engine. We just need to specify var which can hold any data type.
