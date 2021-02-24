@@ -10,7 +10,10 @@ describe("Handling web tables", function() {
 	it("Retrieve header row labels and and validate text", function() {
 		browser.waitForAngularEnabled(false);
 		browser.get("https://www.globalsqa.com/angularjs-protractor-practice-site/");
-		element(by.css("a[href='/angularJs-protractor/WebTable']")).click();
+		browser.executeScript('window.scrollTo(0,500);').then(function(arg0) {//Scroll down
+			element(by.css("a[href='/angularJs-protractor/WebTable']")).click();
+		})
+		
 		var tabledata = element.all(by.css("table[st-table='rowCollection']>thead"));//Locate entire table
 
 		// get rows 
@@ -55,7 +58,7 @@ describe("Handling web tables", function() {
 			]);
 	})
 	
-	it("Get text of a particular record in web table", function() {
+/*	it("Get text of a particular record in web table", function() {
 		var table = element.all(by.css("table[st-table='rowCollection']>thead"));//Locate entire table
 		var rows = table.all(by.xpath("//table[@st-table='rowCollection']/tbody/tr")).each(function(item) {
 			var cells = item.all(by.tagName("td"));
@@ -72,19 +75,20 @@ describe("Handling web tables", function() {
 			
 		});
 
-	})
+	})*/
 	
 	it("Search for a particular text and verify search results", function() {
-	    var EC = protractor.ExpectedConditions;
-		element(by.css("input[placeholder='search for firstname']")).sendKeys("Robert");
-		var table = element.all(by.css("table[st-table='rowCollection']>thead"));//Locate entire table
-		table.all(by.xpath("//table[@st-table='rowCollection']/tbody/tr")).count().then(function(count) {
-			console.log("No of matching records: "+count);
+		//var EC = protractor.ExpectedConditions;
+		element(by.css("input[placeholder='search for firstname']")).sendKeys("Robert");//Enter text in search box
+		browser.sleep(3000);
+		element.all(by.xpath("//table[@st-table='rowCollection']/tbody/tr")).count().then(function(cnt) {
+			console.log("No of matching records: "+cnt);
 		})
-		table.all(by.xpath("//table[@st-table='rowCollection']/tbody/tr")).each(function(item) {
-			var stale = EC.not(EC.stalenessOf(item.element(by.css("td:nth-child(1)"))));
-			browser.wait(stale, 20000);
-			item.element(by.css("td:nth-child(1)")).getText().then(function(text) {
+		
+		element.all(by.xpath("//table[@st-table='rowCollection']/tbody/tr")).each(function(item) {//Iterate on search results
+			//var stale = EC.not(EC.stalenessOf(item.element(by.css("td:nth-child(1)"))));
+			//browser.wait(stale, 30000);
+			item.element(by.css("td:nth-child(1)")).getText().then(function(text) {//Get text of each row in a column and assert.
 						expect(text).toEqual("Robert");
 					});			
 		});
