@@ -1,3 +1,4 @@
+
 //By default console.log prints in new line every time it is called.
 console.log("First javascript program");
 
@@ -59,4 +60,21 @@ do{
  * Everything is an object in Javascript.
  * 
  */
+
+ //Adding elements to array dynamically - Two ways are possible
+ var colors = ['red','green','blue'];
+ var item = [];
+  colors.forEach(function(color){
+   item[item.length] = color;
+});
+console.log(item);
+
+var colors = ['red','green','blue'];
+var item = [];
+ colors.forEach(function(color){
+  item.push(color);
+});
+console.log(item);
+
+
 
