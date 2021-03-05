@@ -1,0 +1,141 @@
+Pending:
+Convert this doc to word with images.
+
+Tip:
+Only pick important use cases and automate performance. 
+Use release num in place of test plan for Jmeter tests.
+At thread group level we can specify name as ticket/story num. In comments box we can specify test case description.
+
+Jmeter tutorials:
+Peformance testing is a type of testing to ensure that a software application will perform well
+under a particular workload.
+Types of performance testing: Load, stress, volume, endurance
+
+Advantages of Jmeter over other tools:
+Open source.
+Cross platform support.
+No scripting is required.
+GUI is user friendly.
+Lot of support and documentation available online.
+
+Jmeter pre-requisities:
+Jmeter software, Java
+Only one test plan at a time can be worked on.
+Test plan consists of all actions and components you need to execute performance test script.
+Need to use HTTP test recorder for recording actions. It is available under Non test elements.
+
+Recording a test:
+In HTTP test recorder, provide name, port no, 
+Select target controller as: Test plan>>HTTP Test script recorder 
+In request filtering tab click add suggested excludes.
+Click save.
+Set proxy in firefox browser. Select manual proxy. Enter localhost, Set port no same as in previous step, select checkbox for Also use this proxy for FTP and HTTPS
+Click Start.
+Click stop.
+https websites need certificate to connect securely. Jmeter provides it.
+Certificate is created in Jmeter bin folder.
+In firefox settings search for certificate and click view certificate.
+Go to Authorities tab and import the certificate from Jmeter bin folder.
+Check all boxes in import window and click OK.
+Now click start again to start recording and record the test scenario.
+When done click stop.
+Analyse all recorded requests and remove any unnecessary requests.
+Click save.
+
+Blazemeter plugin
+Add blazemeter plugin using Chrome web store
+Login and record a test.
+Convert the script to .jmx file.
+Import the file into Jmeter.
+Blazemeter recording will exclude unnecessary recordings.
+Read Jmeter books to master it. - 
+
+Running test:
+First record a test in Firefox in proxy mode.
+A thread group is a set of threads executing the same scenario.
+Threads are users in Jmeter.
+Right click on test plan and add a thread group.
+In thread group window, provide name, select continue radio button, enter no of users, ramp up period, loop count.
+Cut all recorded files under HTTP test recorder and paste under thread group element.
+Run the test using run button.
+For reporting add listeners - Aggregate report, Graph results, View results tree.
+
+Best practice:
+Design a test for 1 user. Run the test and make sure it passes with proper request and responses. Use assertions if required.
+Then scale the test to multiple users.
+When testing using multiple users make sure to add assertions as we need to verify each request has really passed with correct results/responses.
+
+Listeners and report analysis: (Also read: https://artoftesting.com/jmeter-result-analysis)
+Commonly the below listeners are used:
+1. View Results tree: All request labels should be marked green. Response should contain appropriate text/response/HTTP stats code. Use assertion to verify.
+
+2. Aggregate Report: 
+Samples : No of users hit that specific request
+Average: It is the average time taken by all the samples to execute specific label.  
+Interpretation: When N no of samples/users hit a specific request, X seconds is the average time taken to get a response on this specific request.
+Min: The shortest time taken by a sample for specific label.
+Max: The longest time taken by a sample for specific label
+Error%: Percentage of Failed requests per Label. This should not be more than 10-15%.
+Throughput: Throughput is the number of request that are processed per time unit(seconds, minutes, hours) by the server. This time is calculated from the start of first sample to
+the end of the last sample. Larger throughput is better. This defines the capability of the server. When we increase the load the throughput should also increase as it should be
+capable of handling more requests per sec. If we go on increasing the load, at one point of time the throughput will become constant. This will be the maximum capacity of server.
+90% Line: 90% of the samples took no more than this time. The remaining samples took at least as long as this. (90th percentile)
+Median: It is the time in the middle of a set of samples result. It indicates that 50% of the samples took no more than this time i.e the remainder took at least as long.
+
+3. Graph Results:
+Std. Dev.: This shows the set of exceptional cases which were deviating from the average value of sample response time. The lesser this value more consistent the data.
+Standard deviation should be less than or equal to half of the average time for a label.
+Throughput: This should ideally increase from bottom to top.
+Average: When this line is plotted, throughput should increase and go above. Likewise deviation line should stay below the average line almost like a straight line.
+
+
+Additional Plugins for Simulating real time Load:
+Download the jar from 
+https://jmeter-plugins.org/wiki/PluginsManager/
+Place the jar in lib/ext folder of Jmeter
+Restart jmeter and look for plugins manager under options menu.
+Click on it and in available plugins search for Custom thread group and check it.
+Click Apply changes and restart
+Right click on test plan>>Thread group.
+You will see below new thread groups:
+Concurrency Thread Group
+Ultimate Thread Group
+
+Using new thread groups: (We can use these thread groups depending on how users behave in a real time scenario. In normal cases we can use thread group only.)
+Right click on test plan>>Add>>Threads
+Click on concurrency thread group. It will be added under test plan.
+Disable the normal thread group before running this concurrency thread group.
+The concept is same for normal thread, Concurrency Thread Group and Ultimate Thread Group. Only the configuration changes.
+Copy all the test recorded under concurrency thread group.
+Configurations reqiuired are as below:
+Select time unit as seconds just below the graph.
+Target concurrency - No of users (Ex: 60)
+Ramp up time: In how much time all users will be on server. (Ex: 30sec)
+Ramp up steps count: In how many steps users will ramp up? (Ex: 3. i.e. 60/3=20 i.e. 20 users will ramp up in 3 steps within a period of 30 sec)
+Hold target rate time (sec): After all users are on server what is the hold time? (How many seconds they will be on server?). Represented by straight line in graph.
+
+Right click on test plan>>Add>>Threads
+Click on ultimate thread group. It will be added under test plan.
+Disable the normal thread group before running this concurrency thread group.
+Copy all the test recorded under concurrency thread group.
+Configurations reqiuired are as below:
+Click Add row.
+Start thread count: No of sers
+Initial delay: Specify delay in seconds after which users will start entering. The graph will be flat.
+Startp time: In how much time all users will be on server.
+Hold load for sec: After all users are on server what is the hold time? (How many seconds they will be on server?). Represented by straight line in graph.
+Shutdown time: No of seconds to bring user count to 0. i.e. all users to come out of server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

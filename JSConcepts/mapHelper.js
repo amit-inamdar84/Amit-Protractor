@@ -25,3 +25,45 @@ prices = cars.map(function(car){
   return car.price;
 });
 console.log(prices);
+console.log("------------------------------------------");
+
+var images = [
+  { height: '34px', width: '39px' },
+  { height: '54px', width: '19px' },
+  { height: '83px', width: '75px' },
+];
+
+var heights = images.map(function(image){
+   return image.height;
+});
+console.log(heights);
+console.log("------------------------------------------");
+
+var trips = [
+  { distance: 34, time: 10 },
+  { distance: 90, time: 50 },
+  { distance: 59, time: 25 }
+];
+
+var speeds = trips.map(function(trip){
+   return trip.distance/trip.time;
+});
+console.log(speeds);
+console.log("------------------------------------------");
+
+var result = [];
+function pluck(array,property){
+  array.forEach(function(arr) {
+    result.push(arr[property]);//Another way to access array element with key.
+  });
+  return result;
+}
+
+
+var paints = [
+  {color: 'red'},
+  {color: 'blue'},
+  {color: 'yellow'}
+];
+
+console.log(pluck(paints,'color'));
