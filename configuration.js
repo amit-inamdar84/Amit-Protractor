@@ -2,7 +2,7 @@
 var Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
 exports.config = {
 		seleniumAddress: 'http://localhost:4444/wd/hub',
-		specs: ['Tests/TC003.js'],
+		specs: ['Tests/TC003.js'],//To run all tests under test folder use: './Tests/**/*.js'
 		capabilities: {
 			  'browserName': 'chrome'
 			},

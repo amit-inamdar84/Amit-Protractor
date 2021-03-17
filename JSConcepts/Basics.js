@@ -9,6 +9,8 @@ is dynamically used by Jscript engine. We just need to specify var which can hol
 To run a javascript program without protractor right click>>Run as>>Node.js Application
 */
 
+//Run a js file in terminal: node filterHelper.js
+
 var x = 20;
 var name = "XYA";
 
