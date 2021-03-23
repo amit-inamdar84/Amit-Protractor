@@ -6,7 +6,7 @@ console.log("First javascript program");
 /**
 Javascript is a dynamic type language, which means you dont need to specify type of the variable because it
 is dynamically used by Jscript engine. We just need to specify var which can hold any data type.
-To run a javascript program without protractor right click>>Run as>>Node.js Application
+To run a javascript program without protractor right click>>Run as>>Node.js Application (Only in eclipse)
 */
 
 //Run a js file in terminal: node filterHelper.js

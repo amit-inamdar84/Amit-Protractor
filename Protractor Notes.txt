@@ -171,6 +171,7 @@ Now go to run configurations in eclipse. Select existing runner and in main tab 
 Even now tests will not run because protractor is uninstalled from D:\Best Buy API\api-playground.
 Now we will get rid of running protractor test case using eclipse and run using node commands which is required for CI CD.
 In scripts section of package, we define all commands to run protractor tests. i.e. webdriver-manager update, start, config file.
+Note the webdriver-manager path to be specified and the arguments update and start.
   "scripts": {
     "webdriver-update": "./node_modules/.bin/webdriver-manager update",
     "webdriver-start": "./node_modules/.bin/webdriver-manager start",

@@ -1,6 +1,25 @@
 //ECMAScript is the standard. Javascript is the implementation.
 //ES6 stands for ECMAScript 6 lanunched in 2015.
 //Array helper methods: forEach, map, filter, find, every, some, reduce
+/*New Features in ES6 - https://www.w3schools.com/js/js_es6.asp
+The let keyword
+The const keyword
+JavaScript Arrow Functions
+JavaScript For/of
+JavaScript Classes
+JavaScript Promises
+JavaScript Symbol
+Default Parameters
+Function Rest Parameter
+Array.find()
+Array.findIndex()
+New Math Methods
+New Number Properties
+New Number Methods
+New Global Methods
+JavaScript Modules
+*/
+
 var colors = ['red','green','blue'];//Define JS array.
 colors.forEach(function(color){//Call foreach() method on array and pass callback function as parameter.
    console.log(color);//The forEach() method calls callback function once for each array element.

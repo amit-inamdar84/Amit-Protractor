@@ -43,3 +43,37 @@ function commentsForPost(post,comments){
 }
 
 console.log(commentsForPost(post,comments));
+console.log("------------------------------------------");
+
+var numbers = [15, 25, 35, 45, 55, 65, 75, 85, 95];
+
+var filteredNumbers = numbers.filter(function(number){
+   return number>50; 
+});
+
+console.log(filteredNumbers);
+console.log("------------------------------------------");
+
+var users = [
+  { id: 1, admin: true },  
+  { id: 2, admin: false },
+  { id: 3, admin: false },
+  { id: 4, admin: false },
+  { id: 5, admin: true },
+ ];
+ 
+ var filteredUsers = users.filter(function(user){
+     return user.admin === true;
+ });
+ console.log(filteredUsers);
+ console.log("------------------------------------------");
+
+ var integers = [10,20,30];
+ var lessThanFifteen = integers.filter(reject);
+
+function reject(value){
+//false,true,true
+   return value>15;
+ }
+ 
+ console.log(lessThanFifteen);
