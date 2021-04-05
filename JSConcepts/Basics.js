@@ -12,11 +12,21 @@ To run a javascript program without protractor right click>>Run as>>Node.js Appl
 
 //Run a js file in terminal: node filterHelper.js
 
+//var is used in old versions of Javascript. In ES6 it is replaced by let.
+//const is used for variables that do not change.
 var x = 20;
 var name = "XYA";
 
 console.log(x);
 console.log(name);
+
+const firstName = "Jane";
+//let firstName = "Janet"; This will give run time error as it is already declared as const.
+console.log(firstName);
+
+let title = "Software Engineer";
+title = "Manager";
+console.log(title);
 
 //If else is same as Java. Execute some code based on a condition.
 if(x == 10){
@@ -78,6 +88,29 @@ var item = [];
   item.push(color);
 });
 console.log(item);
+
+//ECMAScript is the standard. Javascript is the implementation.
+//ES6 stands for ECMAScript 6 launched in 2015.
+//Most featured introduced in ES6 are for easier understanding of code, code optimization.
+//Array helper methods: forEach, map, filter, find, every, some, reduce
+/*New Features in ES6 - https://www.w3schools.com/js/js_es6.asp
+The let keyword
+The const keyword
+JavaScript Arrow Functions
+JavaScript For/of
+JavaScript Classes
+JavaScript Promises
+JavaScript Symbol
+Default Parameters
+Function Rest Parameter
+Array.find()
+Array.findIndex()
+New Math Methods
+New Number Properties
+New Number Methods
+New Global Methods
+JavaScript Modules
+*/
 
 
 
