@@ -1,10 +1,35 @@
-//To use jasmine data provider include the dependency: jasmine-data-provider in your package.json file.
-//Go to the project path and run the command: npm install.
-//It basically helps to provide multiple sets of data to the specs.
-//We can use module.exports to tie up with data file object and then in test case file we can use var obj = require("./data.js");
-//i.e. obj.datadrive.firstinput can be used to replace hard coded data values in spec. 
-//The above method will help to read only 1 set of data. So we need to use jasmine data provider and make changes to data file:
-//Add multiple data sets under a parent object. Then export the entire object using module.exports. For details see data.js file.
-//Once the data file is ready with multiple data sets, we need to wrap the test case with a jasmine concept called "using".
-//Also need to import jasmine data provider as it is not a core part of Jasmine and is external.For details see data.js file and spec TC001.js.
+1. Jasmine is a behavior-driven development framework for testing JavaScript code.Jasmine is installed with protractor.
+2. Describe: A test suite begins with a call to the global Jasmine function describe with two parameters: a string and a function.
+The string is a name or title for a spec suite - usually what is being tested. The function is a block of code that implements the suite.
+3. Spec:Specs are defined by calling the global Jasmine function - it, which takes a string and a function.
+The string is the title of the spec and the function is the spec, or test. A spec contains one or more expectations that test the state of
+the code. An expectation in Jasmine is an assertion that is either true or false. A spec with all true expectations is a passing spec.
+A spec with one or more false expectations is a failing spec.
+4. Expectations: Expectations are built with the function expect which takes a value, called the actual.
+It is chained with a Matcher function, which takes the expected value.
+5. Matcher: Each matcher implements a boolean comparison between the actual value and the expected value. It is responsible for reporting
+to Jasmine if the expectation is true or false. Jasmine will then pass or fail the spec.
+6. Jasmine has a rich set of matchers. The implementation is done in JasmineMatchers.js file
+7. The 'toBe' matcher compares with === i.e. both type and value should be equal.
+8. 
+
+
+
+
+
+
+
+
+
+
+
+To use jasmine data provider include the dependency: jasmine-data-provider in your package.json file.
+Go to the project path and run the command: npm install.
+It basically helps to provide multiple sets of data to the specs.
+We can use module.exports to tie up with data file object and then in test case file we can use var obj = require("./data.js");
+i.e. obj.datadrive.firstinput can be used to replace hard coded data values in spec. 
+The above method will help to read only 1 set of data. So we need to use jasmine data provider and make changes to data file:
+Add multiple data sets under a parent object. Then export the entire object using module.exports. For details see data.js file.
+Once the data file is ready with multiple data sets, we need to wrap the test case with a jasmine concept called "using".
+Also need to import jasmine data provider as it is not a core part of Jasmine and is external.For details see data.js file and spec TC001.js.
 
