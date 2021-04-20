@@ -3,8 +3,7 @@
   "dependencies": {
     "jasmine-data-provider": "^2.2.0",
     "protractor": "^7.0.0",
-    "protractor-jasmine2-html-reporter": "0.0.7",
-    "axios": "^0.21.1"
+    "protractor-jasmine2-html-reporter": "0.0.7"
   },
   "scripts": {
     "webdriver-update": "webdriver-manager update",
@@ -12,7 +11,8 @@
     "protractor": "protractor configuration.js",
     "regression": "protractor configuration.js --suite Regression",
     "Smoke": "protractor configuration.js --suite Smoke",
-    "start": "npm run webdriver-update &&npm run webdriver-start"
+    "start": "npm run webdriver-update &&npm run webdriver-start",
+    "test": "mocha .mocharc.js"
   },
   "version": "1.0.0",
   "main": "Actions.js",

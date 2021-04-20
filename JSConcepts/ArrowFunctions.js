@@ -21,7 +21,7 @@ const print = () => "No argument fat arrow function";
 console.log(print());
 
 //Arrow functions are useful for making this keyword refer to current object.
-//In below snipper, this.teamName returns undefined because map function only refers to members.
+//In below code snippet, this.teamName returns undefined because map function only refers to members.
 const team = {
    members : ['Jane','Bill'],
    teamName : 'Super Squad',
