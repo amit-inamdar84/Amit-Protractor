@@ -11,7 +11,8 @@
     "protractor": "protractor configuration.js",
     "regression": "protractor configuration.js --suite Regression",
     "Smoke": "protractor configuration.js --suite Smoke",
-    "start": "npm run webdriver-update &&npm run webdriver-start"
+    "start": "npm run webdriver-update &&npm run webdriver-start",
+    "test": "mocha .mocharc.js"
   },
   "version": "1.0.0",
   "main": "Actions.js",

@@ -165,11 +165,13 @@ Now to manage all dependencies like Maven, uninstall protractor using npm uninst
 Delete the Protractor folder in eclipse under main project.
 Add protractor dependency in package.json. Get the dependency from https://www.npmjs.com/
 Open cmd and go to the project path and execute the command: npm install to download all dependencies mentioned in package.json.
+When we ship the project to others they just need to navigate to their project folder and run npm install to start executing tests.
 Right click and refresh on project to see node_modules folder.
 Now go to run configurations in eclipse. Select existing runner and in main tab browse and select cli.js file under node_modules folder. Click save.
 Even now tests will not run because protractor is uninstalled from D:\Best Buy API\api-playground.
 Now we will get rid of running protractor test case using eclipse and run using node commands which is required for CI CD.
 In scripts section of package, we define all commands to run protractor tests. i.e. webdriver-manager update, start, config file.
+Note the webdriver-manager path to be specified and the arguments update and start.
   "scripts": {
     "webdriver-update": "./node_modules/.bin/webdriver-manager update",
     "webdriver-start": "./node_modules/.bin/webdriver-manager start",
