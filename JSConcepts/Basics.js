@@ -89,6 +89,9 @@ var item = [];
 });
 console.log(item);
 
+//Array concatenation
+//arr1.concat(arr2);
+
 //ECMAScript is the standard. Javascript is the implementation.
 //ES6 stands for ECMAScript 6 launched in 2015.
 //Most featured introduced in ES6 are for easier understanding of code, code optimization.
