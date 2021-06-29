@@ -53,7 +53,7 @@ console.log("------------------------------------------");
 
 var result = [];
 function pluck(array,property){
-  array.forEach(function(arr) {
+  array.map(function(arr) {
     result.push(arr[property]);//Another way to access array element with key.
   });
   return result;
