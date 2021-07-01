@@ -54,7 +54,7 @@ console.log("------------------------------------------");
 var result = [];
 function pluck(array,property){
   array.map(function(arr) {
-    result.push(arr[property]);//Another way to access array element with key.
+    return result.push(arr[property]);//Another way to access array element with key.
   });
   return result;
 }
@@ -67,3 +67,17 @@ var paints = [
 ];
 
 console.log(pluck(paints,'color'));
+
+console.log("------------------------------------------");
+
+function pluck(array, property) {
+  var newarr = array.map(function(arr){
+      return arr[property];
+  });
+  
+  return newarr;
+}
+
+var paints = [ { color: 'red' }, { color: 'blue' }, { color: 'yellow' }];
+
+pluck(paints, 'color');
