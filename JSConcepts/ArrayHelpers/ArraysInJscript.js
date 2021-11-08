@@ -1,5 +1,6 @@
 /**
  * Array is a collection of values or objects.
+ Helpers learning order : map, find, filter, every, some, reduce
  */
 var a = [ 10, "Test", true, 20 ];
 

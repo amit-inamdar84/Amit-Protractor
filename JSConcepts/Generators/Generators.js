@@ -1,7 +1,10 @@
+//Introduced in ES6 version, generator functions are a special class of functions.
 //For of loop is another loop in JS to iterate on an array, object. This loop is used with generators.
-//Generators are functions that can be entered and exited multiple times.
+//Generators are functions that can be entered and exited multiple times. i.e. They can be stopped midway and then continue from where it had stopped.
 //Generators can be used iterate over any type of collections in Javascript.
+//Generator functions are declared with the function* keyword instead of the normal function keyword:
 
+//Working of for of loop
 const numbers = [1,9,20,8,7];
 let total = 0;
 

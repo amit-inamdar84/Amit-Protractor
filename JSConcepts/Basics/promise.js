@@ -1,4 +1,5 @@
 //A promise is an object that may produce a single value some time in the future: either a resolved value or rejected error.
+//Promises are used to handle asynchronous operations in javascript.
 //Each line of code in JS returns a promise.
 //3 states of promise - By default it is in unresolved state.
 //Unresolved - waiting for something to finish
@@ -39,5 +40,5 @@ const url = 'https://jsonplaceholder.typicode.com/posts';
 fetch(url)
 .then(response => response.json)
 .then((data) => console.log(data));
-
+console.log("-----------------------------------------");
 

@@ -4,7 +4,7 @@
 
 var computers = [
     {name: 'Apple', ram:16},
-    {name: 'Samsung', ram:4},
+    {name: 'Samsung', ram:64},
     {name: 'Dell', ram:32}
 ];
 
