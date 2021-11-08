@@ -6,7 +6,7 @@ const companies = [
     {name:'Facebook',location:'New York'}
 ]
 
-const [x] = companies;
+const [x] = companies;//Extracting only 1 element. By default it will be 1st element.
 console.log(x);
 
 const {y} = companies;

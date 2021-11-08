@@ -8,11 +8,16 @@ var users = [
     {name:'Kill'}//Will not return this as this is a 2nd occurence.
 ];
 
-var result = users.find(function(user){
+var result = users.find(function(user){//Find finds only first occurence.
    return user.name == 'Kill';
 });
 
+var result10 = users.filter(function(user){//Filter helper finds all occurences of elements.
+    return user.name == 'Kill';
+})
+
 console.log(result);
+console.log(result10);
 console.log("---------------------------------");
 
 var posts = [
